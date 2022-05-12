@@ -1,0 +1,38 @@
+.customButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.customButton {
+  height: 60px;
+  background-color: inherit;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  color: white;
+  font-size: 1rem;
+  border: 2px solid #a18bbe93;
+  border-radius: 5px;
+  margin: 10px 0;
+  cursor: pointer;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.customButton:hover {
+  background-color: #a18bbe93;
+}
+
+.customButton__image {
+  height: 70%;
+  margin: 0 10px;
+}
+/*# sourceMappingURL=customButtonsFilters.css.map */

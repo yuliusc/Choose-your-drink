@@ -1,0 +1,31 @@
+.filtersCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .custButton {
+    cursor: pointer;
+    text-shadow: 0 0 0 white;
+    margin-bottom: 1rem;
+  }
+  &.drinkPage {
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+}
+
+@media (min-width: 768px) {
+  .filtersCont {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: row;
+    margin-bottom: 1.5rem;
+
+    .custButton {
+      margin-right: 20px;
+      margin-bottom: 0;
+    }
+  }
+}

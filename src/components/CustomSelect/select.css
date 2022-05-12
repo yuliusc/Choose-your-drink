@@ -1,0 +1,69 @@
+.searchByIng {
+  position: relative;
+  width: 230px;
+  position: relative;
+  border: 2px solid #a18bbe93;
+  border-radius: 4px;
+}
+
+.searchByIng__select, .searchByIng__search {
+  outline: none;
+  border: none;
+  height: 46px;
+  width: 100%;
+  font-size: 1.1rem;
+}
+
+.searchByIng__search {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: transparent;
+  color: white;
+  padding-left: 5px;
+}
+
+.searchByIng__select {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 2px;
+}
+
+.searchByIng__select option {
+  background: black;
+  color: white;
+}
+
+.searchByIng .chosenIngredients {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  height: 200px;
+  width: 100%;
+  z-index: 2;
+  overflow: auto;
+}
+
+.searchByIng .chosenIngredients__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  background-color: #535353bb;
+  cursor: pointer;
+}
+
+.searchByIng .chosenIngredients__element {
+  padding: 7px 10px;
+}
+
+.searchByIng .chosenIngredients__element:hover {
+  background-color: #a18bbe93;
+}
+
+@media (min-width: 768px) {
+  .searchByIng {
+    margin: 0;
+  }
+}
+/*# sourceMappingURL=select.css.map */

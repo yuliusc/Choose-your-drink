@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "tex-gyre-adventor.bold";
+  src: local("tex-gyre-adventor.bold"),
+    url("../fonts/tex-gyre-adventor.bold.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "tex-gyre-adventor.regular";
+  src: local("tex-gyre-adventor.regular"),
+    url("../fonts/tex-gyre-adventor.regular.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Citrica";
+  src: local("Citrica"), url("../fonts/Citrica-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AceSansDemo";
+  src: local("AceSansDemo"),
+    url("../fonts/AceSansDemo 400.otf") format("opentype");
+  font-display: swap;
+}

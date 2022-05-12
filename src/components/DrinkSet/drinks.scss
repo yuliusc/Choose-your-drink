@@ -1,0 +1,29 @@
+@import "../../styles/colors";
+
+.drinkPage {
+  &__noDrinksFound {
+    color: $light-gray-10;
+    font-weight: bold;
+  }
+}
+
+@media (min-width: 768px) {
+  .drinksCont {
+    width: 700px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: auto;
+    margin: auto;
+    grid-gap: 15px;
+  }
+}
+@media (min-width: 1024px) {
+  .drinksCont {
+    width: 900px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: auto;
+    margin: auto;
+    grid-gap: 15px;
+  }
+}

@@ -1,0 +1,105 @@
+@-webkit-keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.home {
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.welcome {
+  width: 100%;
+}
+
+.welcome .main {
+  width: 100%;
+  margin: auto;
+  background-color: #303030;
+  -webkit-text-stroke: thin;
+  -webkit-text-stroke-color: black;
+}
+
+.welcome .main__title {
+  font-family: "tex-gyre-adventor.bold";
+  padding: 0 20px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.welcome .main__drinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 3rem 0;
+}
+
+.welcome .main__drinks img {
+  width: 50%;
+  height: auto;
+}
+
+.content {
+  width: 100%;
+}
+
+.content__filterInfo {
+  margin-top: 3rem;
+  color: #b1b1b1;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .welcome .main__drinks img {
+    width: 30%;
+    height: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home {
+    padding: 0;
+  }
+  .home .welcome {
+    background: #ffb198;
+    background: #a18bbe;
+    background: -webkit-gradient(linear, left top, right top, from(#a18bbe), color-stop(95%, #ffb198));
+    background: linear-gradient(90deg, #a18bbe 0%, #ffb198 95%);
+    -webkit-animation: gradientAnimation 5s linear infinite;
+            animation: gradientAnimation 5s linear infinite;
+    background-size: 200% 200%;
+  }
+  .home .welcome .main {
+    width: 900px;
+  }
+  .content {
+    width: 900px;
+    margin: auto;
+  }
+  .content__filterInfo {
+    text-align: left !important;
+  }
+}
+/*# sourceMappingURL=home.css.map */

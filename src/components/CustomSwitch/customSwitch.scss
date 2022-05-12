@@ -1,0 +1,51 @@
+@import "../../styles/colors";
+
+.customSwitch {
+  border: 2px solid $light-blue-10;
+  width: 100px;
+  height: 50px;
+  margin-right: 20px;
+  box-sizing: border-box;
+  border-radius: 2rem;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 1rem;
+
+  .toggle {
+    width: 40px;
+    height: 40px;
+    background-color: $light-blue-10;
+    border-radius: 2rem;
+    position: absolute;
+    top: 3px;
+    transition: all 0.3s linear;
+
+    &.alcoholic {
+      left: 53px;
+    }
+
+    &.non_alcoholic {
+      left: 3px;
+    }
+  }
+
+  &__image {
+    height: 100%;
+  }
+}
+
+.customSwitch.alcoholic {
+  background-color: $gray-10;
+  transition: all 0.3s linear;
+}
+
+.customSwitch.non_alcoholic {
+  background-color: $gray-5;
+  transition: all 0.3s linear;
+}
+
+@media (min-width: 768px) {
+  .customSwitch {
+    margin-bottom: 0;
+  }
+}

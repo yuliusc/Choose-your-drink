@@ -1,0 +1,57 @@
+@import "../../styles/colors";
+
+.drink {
+  display: flex;
+  justify-content: flex-start;
+  margin: 1.5rem 0;
+  cursor: pointer;
+  text-align: left;
+  position: relative;
+  background: $light-blue-10;
+  flex-direction: row;
+  border-radius: 15px;
+
+  &__img {
+    width: 130px;
+    height: 130px;
+    border-radius: 15px 0 0 15px;
+  }
+
+  &__info {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    width: 90vw;
+    padding: 0 10px;
+  }
+
+  &__name {
+    margin: 0.7rem auto 0.4rem auto;
+    font-family: "AceSansDemo";
+    color: $font-light;
+    text-align: center;
+    word-break: break-word;
+  }
+}
+
+@media (min-width: 768px) {
+  .drink {
+    margin: 0.5rem 0;
+    padding: 7px 0;
+    flex-direction: column;
+
+    &__info {
+      width: auto;
+    }
+    &__img {
+      width: calc(100% - 14px);
+      height: auto;
+      margin: auto;
+      border-radius: 15px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+}

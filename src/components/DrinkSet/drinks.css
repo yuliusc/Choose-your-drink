@@ -1,0 +1,31 @@
+.drinkPage__noDrinksFound {
+  color: #b1b1b1;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .drinksCont {
+    width: 700px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    width: auto;
+    margin: auto;
+    grid-gap: 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .drinksCont {
+    width: 900px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    width: auto;
+    margin: auto;
+    grid-gap: 15px;
+  }
+}
+/*# sourceMappingURL=drinks.css.map */

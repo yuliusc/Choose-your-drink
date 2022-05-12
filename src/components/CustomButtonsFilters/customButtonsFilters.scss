@@ -1,0 +1,29 @@
+@import "../../styles/_colors";
+
+.customButton {
+  display: flex;
+}
+
+.customButton {
+  height: 60px;
+  background-color: inherit;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+  font-size: 1rem;
+  border: 2px solid $light-blue-5;
+  border-radius: 5px;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: all 0.5s linear;
+
+  &:hover {
+    background-color: $light-blue-5;
+  }
+  &__image {
+    height: 70%;
+    margin: 0 10px;
+  }
+}

@@ -1,0 +1,222 @@
+@import "../../styles/colors";
+@import "../../styles/_mixins";
+
+.drinkContainer {
+  position: relative;
+
+  width: 100%;
+  &__top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 64vh;
+    background-size: cover;
+  }
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+
+  &__name {
+    text-align: center;
+    -webkit-text-stroke: thin;
+    -webkit-text-stroke-color: black;
+    font-size: clamp(26px, 4vw, 32px);
+  }
+  &__description {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+  }
+  &__block {
+    width: 200px;
+    height: 80px;
+    text-align: center;
+    border-radius: 0 5rem 5rem 0;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $light-blue-10;
+    font-size: clamp(14px, 2vw, 18px);
+
+    p {
+      margin: 0;
+    }
+
+    &--type {
+      font-weight: bold;
+      font-size: 18px;
+    }
+  }
+
+  .instructions {
+    background-image: url("../../assets/img/alcohol-gd2b28a1bc_1920.jpg");
+    display: flex;
+    justify-content: space-around;
+    background-size: cover;
+    padding: 4rem 0;
+    margin-top: 5rem;
+    color: $background-dark;
+    flex-wrap: wrap;
+
+    .frame {
+      width: 300px;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 1rem 2rem 2rem 2rem;
+      box-sizing: border-box;
+
+      &__text {
+        color: $light-blue-10;
+        -webkit-text-stroke: thin;
+        -webkit-text-stroke-color: black;
+      }
+
+      .productsFrame {
+        display: flex;
+
+        &__table {
+          width: 100%;
+
+          tr:nth-child(even) {
+            background-color: $light-blue-5;
+          }
+        }
+
+        &__cell {
+          &--right {
+            text-align: right;
+            border-left: 3px solid $light-blue-5;
+            padding-left: 10px;
+            width: 30%;
+          }
+          &--left {
+            padding-right: 10px;
+            width: 70%;
+          }
+        }
+      }
+    }
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes rotate1 {
+    0% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  .bottomCont {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+    padding: 0 2rem;
+
+    &__left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    &__button {
+      outline: none;
+      background-color: inherit;
+      border: none;
+      font-size: clamp(14px, 2vw, 18px);
+      color: white;
+      padding: 6px 0;
+    }
+    &__gradientCont {
+      &--outer {
+        width: 300px;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+      }
+
+      &--outer:before {
+        content: "";
+        position: absolute;
+        transform: rotate(33deg);
+        @include gradientB;
+        width: 300px;
+        height: 300px;
+        animation: rotate 2s linear infinite;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+      }
+      &--inner {
+        background-color: $background-dark;
+        width: 225px;
+        height: 225px;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        box-shadow: inset 8px 8px 24px 0px rgba(66, 68, 90, 0.68);
+        img {
+          width: 150px;
+          height: 150px;
+          padding-right: 2rem;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+  .drinkContainer {
+    width: 100%;
+    margin: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .drinkContainer {
+    width: 900px;
+    margin: auto;
+
+    &__name {
+      padding-bottom: 3rem;
+    }
+    &__top {
+      height: 50vh;
+    }
+
+    &__description {
+      flex-direction: row;
+      margin-top: -4rem;
+      position: static;
+    }
+    &__block {
+      height: 150px;
+      border-radius: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      p {
+        margin: 5px;
+      }
+    }
+  }
+}

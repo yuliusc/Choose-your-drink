@@ -1,0 +1,345 @@
+@-webkit-keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.drinkContainer {
+  position: relative;
+  width: 100%;
+}
+
+.drinkContainer__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 64vh;
+  background-size: cover;
+}
+
+.drinkContainer__image {
+  width: 100%;
+  height: auto;
+}
+
+.drinkContainer__name {
+  text-align: center;
+  -webkit-text-stroke: thin;
+  -webkit-text-stroke-color: black;
+  font-size: clamp(26px, 4vw, 32px);
+}
+
+.drinkContainer__description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  top: 0;
+}
+
+.drinkContainer__block {
+  width: 200px;
+  height: 80px;
+  text-align: center;
+  border-radius: 0 5rem 5rem 0;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #a18bbe;
+  font-size: clamp(14px, 2vw, 18px);
+}
+
+.drinkContainer__block p {
+  margin: 0;
+}
+
+.drinkContainer__block--type {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.drinkContainer .instructions {
+  background-image: url("../../assets/img/alcohol-gd2b28a1bc_1920.jpg");
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-size: cover;
+  padding: 4rem 0;
+  margin-top: 5rem;
+  color: #303030;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.drinkContainer .instructions .frame {
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 1rem 2rem 2rem 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.drinkContainer .instructions .frame__text {
+  color: #a18bbe;
+  -webkit-text-stroke: thin;
+  -webkit-text-stroke-color: black;
+}
+
+.drinkContainer .instructions .frame .productsFrame {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.drinkContainer .instructions .frame .productsFrame__table {
+  width: 100%;
+}
+
+.drinkContainer .instructions .frame .productsFrame__table tr:nth-child(even) {
+  background-color: #a18bbe93;
+}
+
+.drinkContainer .instructions .frame .productsFrame__cell--right {
+  text-align: right;
+  border-left: 3px solid #a18bbe93;
+  padding-left: 10px;
+  width: 30%;
+}
+
+.drinkContainer .instructions .frame .productsFrame__cell--left {
+  padding-right: 10px;
+  width: 70%;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes rotate1 {
+  0% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes rotate1 {
+  0% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+.drinkContainer .bottomCont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 2rem 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0 2rem;
+}
+
+.drinkContainer .bottomCont__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.drinkContainer .bottomCont__button {
+  outline: none;
+  background-color: inherit;
+  border: none;
+  font-size: clamp(14px, 2vw, 18px);
+  color: white;
+  padding: 6px 0;
+}
+
+.drinkContainer .bottomCont__gradientCont--outer {
+  width: 300px;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 100%;
+}
+
+.drinkContainer .bottomCont__gradientCont--outer:before {
+  content: "";
+  position: absolute;
+  -webkit-transform: rotate(33deg);
+          transform: rotate(33deg);
+  background: #ffb198;
+  background: -webkit-gradient(linear, left top, right top, from(#ffb198), color-stop(95%, #a18bbe));
+  background: linear-gradient(90deg, #ffb198 0%, #a18bbe 95%);
+  width: 300px;
+  height: 300px;
+  -webkit-animation: rotate 2s linear infinite;
+          animation: rotate 2s linear infinite;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 100%;
+}
+
+.drinkContainer .bottomCont__gradientCont--inner {
+  background-color: #303030;
+  width: 225px;
+  height: 225px;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 2;
+  -webkit-box-shadow: inset 8px 8px 24px 0px rgba(66, 68, 90, 0.68);
+          box-shadow: inset 8px 8px 24px 0px rgba(66, 68, 90, 0.68);
+}
+
+.drinkContainer .bottomCont__gradientCont--inner img {
+  width: 150px;
+  height: 150px;
+  padding-right: 2rem;
+}
+
+@media (min-width: 768px) {
+  .drinkContainer {
+    width: 100%;
+    margin: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .drinkContainer {
+    width: 900px;
+    margin: auto;
+  }
+  .drinkContainer__name {
+    padding-bottom: 3rem;
+  }
+  .drinkContainer__top {
+    height: 50vh;
+  }
+  .drinkContainer__description {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-top: -4rem;
+    position: static;
+  }
+  .drinkContainer__block {
+    height: 150px;
+    border-radius: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .drinkContainer__block p {
+    margin: 5px;
+  }
+}
+/*# sourceMappingURL=DrinkPage.css.map */

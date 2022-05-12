@@ -1,0 +1,107 @@
+@-webkit-keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@font-face {
+  font-family: "tex-gyre-adventor.bold";
+  src: local("tex-gyre-adventor.bold"), url("../fonts/tex-gyre-adventor.bold.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "tex-gyre-adventor.regular";
+  src: local("tex-gyre-adventor.regular"), url("../fonts/tex-gyre-adventor.regular.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Citrica";
+  src: local("Citrica"), url("../fonts/Citrica-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AceSansDemo";
+  src: local("AceSansDemo"), url("../fonts/AceSansDemo 400.otf") format("opentype");
+  font-display: swap;
+}
+
+body {
+  color: white;
+  font-family: "tex-gyre-adventor.regular";
+  margin-bottom: 2rem !important;
+}
+
+ul,
+button,
+input,
+td,
+div {
+  font-family: "tex-gyre-adventor.regular";
+}
+
+h1,
+h2 {
+  font-family: "tex-gyre-adventor.bold";
+}
+
+h1 {
+  font-size: clamp(28px, 2vw, 36px);
+}
+
+p {
+  font-size: clamp(14px, 2vw, 18px);
+}
+
+.custButton {
+  padding: 15px 20px;
+  border: 2px solid #a18bbe93;
+  position: relative;
+  border-radius: 8px;
+  background: transparent;
+  color: white;
+  font-family: "AceSansDemo";
+  font-size: 1.1rem;
+}
+
+.custButton:hover:before {
+  background: #a18bbe;
+  z-index: -1;
+}
+
+.custButton:before {
+  content: " ";
+  position: absolute;
+  z-index: 6;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border: 2px solid #a18bbe;
+  border-radius: 8px;
+}
+
+#root {
+  overflow-x: hidden;
+}
+/*# sourceMappingURL=global.css.map */
