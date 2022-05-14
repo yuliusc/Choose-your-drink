@@ -3,12 +3,18 @@ import { useNavigate } from "react-router-dom";
 
 import { ContextDrinkId } from "../../context/drinkIdContext";
 
-import useDrink from "./useDrink";
-
 import "./drink.css";
 
-const Drink = ({ name, id, src }) => {
-  const { displayDetailsHandler } = useDrink({ name, id });
+const Drink = (props) => {
+  const { name, id, src } = props;
+  let navigate = useNavigate();
+  const { DrinkId, setDrinkId } = useContext(ContextDrinkId);
+
+  const displayDetailsHandler = () => {
+    setDrinkId(id);
+    localStorage.setItem("selectedDrinkID", id);
+    navigate(`/drinks/${name.replaceAll(" ", "_")}`);
+  };
 
   return (
     <>

@@ -3,7 +3,9 @@ import "./customButtonsFilters.css";
 import alcoholic_icon from "../../assets/img/alcoholic icon.png";
 import non_alcoholic_icon from "../../assets/img/non_alcoholic icon.png";
 
-const CustomSwitch = ({ filterByAlcoholicHandler }) => {
+const CustomSwitch = (props) => {
+  const { filterByAlcoholicHandler } = props;
+
   const changeSwitch = (details) => {
     filterByAlcoholicHandler(details);
   };

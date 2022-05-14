@@ -1,11 +1,43 @@
-import Filters from "../../components/Filters/Filters";
-import DrinkSet from "../../components/DrinkSet/DrinkSet";
+import { useState, useEffect, useContext } from "react";
+import { useLocation } from "react-router-dom";
+
+import Filters from "../Filters/Filters";
+import { FetchedDrinks } from "../../context/fetchedDrinks";
+import DrinkSet from "../DrinkSet/DrinkSet";
 
 import "./home.css";
 
 import homePageGif from "../../assets/gifs/joinesgifimage-3473372.gif";
 
 const Home = () => {
+  const { fetchedDrinks, setFetchedDrinks } = useContext(FetchedDrinks);
+  const [drinks, setDrinks] = useState(null);
+  const [filterText, setFilterText] = useState("");
+
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+
+  useEffect(() => {
+    if (fetchedDrinks) {
+      setFetchedDrinks(fetchedDrinks);
+      setDrinks(fetchedDrinks);
+    } else {
+      setDrinks(fetchedDrinks);
+    }
+  }, [fetchedDrinks, setFetchedDrinks]);
+
+  useEffect(() => {
+    if (!filterText) {
+      setFilterText("Non Alcoholic");
+    } else {
+      if (queryParams.get("i")) {
+        setFilterText(queryParams.get("i").split("_").join(" "));
+      } else if (queryParams.get("filter")) {
+        setFilterText(queryParams.get("filter").split("_").join(" "));
+      }
+    }
+  }, [filterText, queryParams]);
+
   return (
     <div className="home">
       <div className="welcome">
@@ -17,13 +49,15 @@ const Home = () => {
         </div>
       </div>
       <div className="content">
-        <>
-          <Filters />
+        {drinks ? (
+          <>
+            <Filters />
 
-          <p className="content__filterInfo">Filtered by: </p>
+            <p className="content__filterInfo">Filtered by: {filterText}</p>
 
-          <DrinkSet />
-        </>
+            <DrinkSet drinks={drinks} />
+          </>
+        ) : null}
       </div>
     </div>
   );
