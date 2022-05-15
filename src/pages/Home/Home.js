@@ -1,9 +1,9 @@
 import { useState, useEffect, useContext } from "react";
 import { useLocation } from "react-router-dom";
 
-import Filters from "../Filters/Filters";
+import Filters from "../../components/Filters/Filters";
 import { FetchedDrinks } from "../../context/fetchedDrinks";
-import DrinkSet from "../DrinkSet/DrinkSet";
+import DrinkSet from "../../components/DrinkSet/DrinkSet";
 
 import "./home.css";
 

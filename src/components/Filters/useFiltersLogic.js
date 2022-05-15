@@ -1,18 +1,17 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useMemo, useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+
 import useFetch from "../../hooks/useFetch.js";
-import { urlFilter } from "../../context/urlFilter";
+import { FetchedDrinks } from "../../context/fetchedDrinks";
 
 const useFiltersLogic = () => {
-  // const { urlFilter, setUrlFilter } = useContext(FetchedDrinks);
+  const { fetchedDrinks, setFetchedDrinks } = useContext(FetchedDrinks);
 
   const basicLink = "https://www.thecocktaildb.com/api/json/v1/1/";
   const searchByAlc = "filter.php?a=";
   const searchByIngredient = "filter.php?i=";
 
   const [apiLink, setApiLink] = useState();
-  const [redirect, setRedirect] = useState(false);
-  const [isAlcoholicSwitch, setIsAlcoholicSwitch] = useState();
 
   const fetchedDataByFilter = useFetch(apiLink, "FETCH_DRINKS");
 
@@ -22,70 +21,83 @@ const useFiltersLogic = () => {
 
   const onDrinkPage = location.pathname.includes("/drinks") ? "drinkPage" : "";
 
-  // const checkQueryParams = () => {
-  //   //searching by ingredient
-  //   if (queryParams.get("i")) {
-  //     getDrinksByIngredientHandler(queryParams.get("i"));
-  //   }
+  const checkQueryParams = useCallback(() => {
+    //searching by ingredient
+    console.log(queryParams);
+    console.log("checkQueryParams");
+    if (queryParams.get("i")) {
+      getDrinksByIngredientHandler(queryParams.get("i"));
+    }
 
-  //   //searching by alcoholic/non alcoholic
-  //   else if (queryParams.get("filter")) {
-  //     filterByAlcoholicHandler(queryParams.get("filter"));
-  //   }
-  // };
+    //searching by alcoholic/non alcoholic
+    else if (queryParams.get("filter")) {
+      filterByAlcoholicHandler(queryParams.get("filter"));
+    }
+  }, []);
 
-  // const filterByAlcoholicHandler = (details) => {
-  //   setApiLink(basicLink + searchByAlc + details);
-  //   setIsAlcoholicSwitch(details);
-  //   navigate(`/?filter=${details}`);
-  // };
+  const filterByAlcoholicHandler = (details) => {
+    setApiLink(basicLink + searchByAlc + details);
+    navigate(`/?filter=${details}`);
+  };
 
-  // const getDrinksByIngredientHandler = (ingredient) => {
-  //   navigate(`/?i=${ingredient}`);
-  //   setApiLink(basicLink + searchByIngredient + ingredient);
-  // };
+  const getDrinksByIngredientHandler = (ingredient) => {
+    navigate(`/?i=${ingredient}`);
+    setApiLink(basicLink + searchByIngredient + ingredient);
+  };
 
-  // const filterDrinks = () => {
-  //   if (location.pathname.includes("/drinks")) {
-  //     setFetchedDrinks(fetchedDrinks);
-  //     setRedirect(true);
-  //   } else if (location.pathname === "/") {
-  //     setFetchedDrinks(fetchedDataByFilter);
-  //   }
-  // };
+  const filterDrinks = useCallback(() => {
+    if (location.pathname.includes("/drinks")) {
+      setFetchedDrinks(fetchedDrinks);
+    } else if (location.pathname === "/") {
+      if (!fetchedDrinks.length) {
+        setFetchedDrinks(fetchedDataByFilter);
+      } else if (fetchedDrinks.length) {
+        setFetchedDrinks(fetchedDataByFilter);
+      } else {
+        setFetchedDrinks(fetchedDrinks);
+      }
+    }
+  }, [fetchedDataByFilter, fetchedDrinks, location.pathname, setFetchedDrinks]);
 
-  // useEffect(() => {
-  //   if (!fetchedDrinks.length && !fetchedDataByFilter) {
-  //     setApiLink(
-  //       "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic"
-  //     );
-  //   }
+  useEffect(() => {
+    if (!fetchedDrinks.length && !fetchedDataByFilter) {
+      setApiLink(
+        "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic"
+      );
+    }
 
-  //   if (location.pathname.includes("/drinks")) {
-  //     if (fetchedDataByFilter) {
-  //       setRedirect(true);
-  //       if (redirect) {
-  //         checkQueryParams();
-  //         filterDrinks();
-  //       }
-  //     }
-  //   } else if (location.pathname === "/") {
-  //     checkQueryParams();
-  //     if (fetchedDataByFilter) {
-  //       filterDrinks();
-  //     }
-  //   }
+    // z tym nie działa, z ifami działa
+    // checkQueryParams();
 
-  //   return () => {
-  //     setRedirect(false);
-  //   };
-  // }, [fetchedDataByFilter]);
+    // if (fetchedDataByFilter) {
+    //   filterDrinks();
+    // }
 
-  // return {
-  //   onDrinkPage,
-  //   filterByAlcoholicHandler,
-  //   getDrinksByIngredientHandler,
-  // };
+    if (location.pathname.includes("/drinks")) {
+      console.log("hello");
+      checkQueryParams();
+
+      if (fetchedDataByFilter) {
+        filterDrinks();
+      }
+    } else {
+      if (fetchedDataByFilter) {
+        filterDrinks();
+      }
+    }
+  }, [
+    checkQueryParams,
+    fetchedDataByFilter,
+    filterDrinks,
+    location.pathname,
+    fetchedDrinks.length,
+  ]);
+
+  return {
+    onDrinkPage,
+    filterByAlcoholicHandler,
+    getDrinksByIngredientHandler,
+  };
 };
 
 export default useFiltersLogic;

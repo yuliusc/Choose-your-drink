@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from "react";
 
 import { ContextDrinkId } from "../../context/drinkIdContext";
 import useFetch from "../../hooks/useFetch.js";
-import Filters from "../Filters/Filters";
+import Filters from "../../components/Filters/Filters";
 import { FetchedDrinks } from "../../context/fetchedDrinks";
 
 import "./DrinkPage.css";
