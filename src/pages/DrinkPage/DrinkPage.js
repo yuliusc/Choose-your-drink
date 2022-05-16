@@ -1,34 +1,12 @@
-import { useEffect, useState, useContext } from "react";
-
-import { ContextDrinkId } from "../../context/drinkIdContext";
-import useFetch from "../../hooks/useFetch.js";
-import Filters from "../Filters/Filters";
-import { FetchedDrinks } from "../../context/fetchedDrinks";
+import Filters from "../../components/Filters/Filters";
+import useDrinkPage from "./useDrinkPage";
 
 import "./DrinkPage.css";
 
 import gifAnimation from "../../assets/gifs/hennessy-hennessy-first-moments.gif";
 
 const DrinkPage = () => {
-  const { fetchedDrinks, setFetchedDrinks } = useContext(FetchedDrinks);
-  const { DrinkId, setDrinkId } = useContext(ContextDrinkId);
-  const [drinkLink, setDrinkLink] = useState("");
-  const [selectedDrinkInfo, setSelectedDrinkInfo] = useState(null);
-  const fetchedDataByCategory = useFetch(drinkLink, "FETCH_DETAILS");
-
-  const basicLink = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
-
-  useEffect(() => {
-    //set link to fetch data
-    setDrinkLink(basicLink + DrinkId);
-
-    //set state-drink info
-    if (fetchedDataByCategory) setSelectedDrinkInfo(fetchedDataByCategory);
-
-    document.documentElement.scrollTo(0, 0);
-  }, [DrinkId, fetchedDataByCategory]);
-
-  useEffect(() => {}, [fetchedDrinks]);
+  const { selectedDrinkInfo } = useDrinkPage();
 
   return (
     <>
