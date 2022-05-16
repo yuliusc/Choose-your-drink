@@ -2,7 +2,7 @@ import useCustomSelect from "./useCustomSelect.js";
 
 import "./select.css";
 
-const Select = ({ getDrinksByIngredientHandler }) => {
+const Select = () => {
   const {
     filterIngredients,
     getDrinksByIngHandler,
@@ -11,7 +11,7 @@ const Select = ({ getDrinksByIngredientHandler }) => {
     inputText,
     displayChosenIngredients,
     chosenIngredients,
-  } = useCustomSelect({ getDrinksByIngredientHandler });
+  } = useCustomSelect();
 
   return (
     <div className={"searchByIng"} onBlur={onBlurSearch}>

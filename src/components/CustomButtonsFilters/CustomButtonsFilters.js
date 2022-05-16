@@ -1,14 +1,18 @@
+import { useNavigate } from "react-router-dom";
+
 import "./customButtonsFilters.css";
 
 import alcoholic_icon from "../../assets/img/alcoholic icon.png";
 import non_alcoholic_icon from "../../assets/img/non_alcoholic icon.png";
 
-const CustomSwitch = ({ filterByAlcoholicHandler }) => {
+const CustomSwitch = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="customButtons">
       <button
         className="customButton"
-        onClick={() => filterByAlcoholicHandler("Non_Alcoholic")}
+        onClick={() => navigate(`/?filter=Non_Alcoholic`)}
       >
         <img
           src={non_alcoholic_icon}
@@ -22,7 +26,7 @@ const CustomSwitch = ({ filterByAlcoholicHandler }) => {
 
       <button
         className="customButton"
-        onClick={() => filterByAlcoholicHandler("Alcoholic")}
+        onClick={() => navigate(`/?filter=Alcoholic`)}
       >
         <img
           src={alcoholic_icon}
