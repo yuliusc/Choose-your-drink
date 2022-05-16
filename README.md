@@ -6,3 +6,6 @@ The aim of the project was to practice React.js and REST API. The application al
 
 ### Technologies:
 React.js, CSS (SCSS), REST API
+
+
+![Projekt bez tytułu (1)](https://user-images.githubusercontent.com/48122458/168621226-cc66f124-5869-4d5c-a7ac-21f1f678f749.png)
