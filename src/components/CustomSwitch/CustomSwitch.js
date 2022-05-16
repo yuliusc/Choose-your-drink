@@ -5,10 +5,8 @@ import non_alcoholic_icon from "../../assets/img/non_alcoholic icon.png";
 
 import useCustomSwitch from "./useCustomSwitch";
 
-const CustomSwitch = ({ filterByAlcoholicHandler }) => {
-  const { changeSwitch, filterAlcohol } = useCustomSwitch({
-    filterByAlcoholicHandler,
-  });
+const CustomSwitch = () => {
+  const { changeSwitch, filterAlcohol } = useCustomSwitch();
 
   return (
     <div className={"customSwitch " + filterAlcohol} onClick={changeSwitch}>

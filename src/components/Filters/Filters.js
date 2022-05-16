@@ -8,23 +8,15 @@ import useFiltersLogic from "./useFiltersLogic";
 import "./filters.css";
 
 const Filters = () => {
-  const {
-    onDrinkPage,
-    filterByAlcoholicHandler,
-    getDrinksByIngredientHandler,
-  } = useFiltersLogic();
+  const { onDrinkPage } = useFiltersLogic();
 
   const location = useLocation();
 
   return (
     <div className={"filtersCont " + onDrinkPage}>
-      {location.pathname.includes("/drinks") ? (
-        <ButtonsFilters filterByAlcoholicHandler={filterByAlcoholicHandler} />
-      ) : (
-        <Switch filterByAlcoholicHandler={filterByAlcoholicHandler} />
-      )}
+      {location.pathname.includes("/drinks") ? <ButtonsFilters /> : <Switch />}
 
-      <Select getDrinksByIngredientHandler={getDrinksByIngredientHandler} />
+      <Select />
     </div>
   );
 };

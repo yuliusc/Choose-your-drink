@@ -1,19 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
-const useCustomSwitch = ({ filterByAlcoholicHandler }) => {
+const useCustomSwitch = () => {
   const [filterAlcohol, setFilterAlcohol] = useState("non_alcoholic");
+  const navigate = useNavigate();
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
 
   const changeSwitch = () => {
     setTimeout(() => {
       if (filterAlcohol === "non_alcoholic") {
-        setFilterAlcohol("alcoholic");
-        filterByAlcoholicHandler("Alcoholic");
+        navigate(`/?filter=Alcoholic`);
       } else {
-        setFilterAlcohol("non_alcoholic");
-        filterByAlcoholicHandler("Non_Alcoholic");
+        navigate(`/?filter=Non_Alcoholic`);
       }
     }, 500);
   };
+
+  useEffect(() => {
+    setFilterAlcohol(
+      queryParams.get("filter")
+        ? queryParams.get("filter").toString().toLowerCase()
+        : "non_alcoholic"
+    );
+  }, [queryParams]);
 
   return { changeSwitch, filterAlcohol };
 };

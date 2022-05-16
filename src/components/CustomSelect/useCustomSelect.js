@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from "react";
-
+import { useNavigate } from "react-router-dom";
 import useFetch from "../../hooks/useFetch.js";
 
-const useCustomSelect = ({ getDrinksByIngredientHandler }) => {
+const useCustomSelect = () => {
   const ingredientsLink =
     "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list";
   const [ingredients, setIngredients] = useState([]);
@@ -16,6 +16,8 @@ const useCustomSelect = ({ getDrinksByIngredientHandler }) => {
   const fetchedCategories = useFetch(ingredientsLink, "CATEGORIES");
 
   const inputValue = useRef();
+
+  const navigate = useNavigate();
 
   //filter ingredients by entered text in input
   const filterIngredients = () => {
@@ -41,7 +43,7 @@ const useCustomSelect = ({ getDrinksByIngredientHandler }) => {
 
   //display only drinks with choosen ingredient
   const getDrinksByIngHandler = (e) => {
-    getDrinksByIngredientHandler(e.target.textContent.split(" ").join("_"));
+    navigate(`/?i=${e.target.textContent.split(" ").join("_")}`);
     setInputText("");
     setDisplayChosenIngredients(false);
   };
